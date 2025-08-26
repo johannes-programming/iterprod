@@ -1,0 +1,27 @@
+
+[go.empty]
+iterables = []
+
+[go.foo]
+iterables = [
+    "foo",
+]
+
+[go.bar]
+iterables = [
+    "bar",
+]
+repeat = 3
+
+[go.original]
+iterables = [
+    "hello",
+    "world",
+    "!",
+]
+
+[go.other]
+iterables = [
+    "hello",
+    [1,2,3],
+]
