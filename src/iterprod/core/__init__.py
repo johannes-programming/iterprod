@@ -7,11 +7,14 @@ __all__ = ["iterprod"]
 def iterprod(*iterables: Iterable, repeat: SupportsIndex = 1) -> Generator:
     if repeat < 0:
         raise ValueError("repeat argument cannot be negative")
-    pools: Iterable = map(tuple, iterables)
+    indeces: list
+    lengths: tuple
+    pools: Iterable
+    pools = map(tuple, iterables)
     pools = list(pools)
     pools *= repeat
-    indeces: list = [0] * len(pools)
-    lengths: tuple = tuple(map(len, pools))
+    indeces = [0] * len(pools)
+    lengths = tuple(map(len, pools))
     while True:
         yield tuple(map(operator.getitem, pools, indeces))
         try:
@@ -21,8 +24,9 @@ def iterprod(*iterables: Iterable, repeat: SupportsIndex = 1) -> Generator:
 
 
 def incr(indeces: list, lengths: tuple) -> None:
+    j: int
     indeces[-1] += 1
-    j: int = -1
+    j = -1
     while True:
         if indeces[j] < lengths[j]:
             return
