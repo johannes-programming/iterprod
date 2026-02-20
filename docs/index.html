@@ -46,13 +46,20 @@
             </dd>
         </dl>
     </body>
-    <script src="https://www.johannes-programming.online/script.js"></script>
-    <script>
+    <script type="module">
+        import {
+            setupImpressumCorpus,
+            setupInstallCorpus,
+            setupLicenseCorpus,
+            setupLinksCorpus,
+            setupTestingCorpus,
+            addMetaAndLinkTags,
+        } from "https://www.johannes-programming.online/main.js";
+        setupImpressumCorpus("iterprod");
         setupInstallCorpus("iterprod");
-        setupTestingCorpus("iterprod");
         setupLicenseCorpus("iterprod");
         setupLinksCorpus("iterprod");
-        setupImpressumCorpus("iterprod");
+        setupTestingCorpus("iterprod");
         addMetaAndLinkTags();
     </script>
 </html>
