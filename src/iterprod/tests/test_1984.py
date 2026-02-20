@@ -14,9 +14,9 @@ class Util(enum.Enum):
 
     @functools.cached_property
     def data(self: Self) -> dict:
-        text: str = resources.read_text("iterprod.tests", "testdata.toml")
-        data: dict = tomllib.loads(text)
-        return data
+        text: str
+        text = resources.read_text("iterprod.tests", "testdata.toml")
+        return tomllib.loads(text)
 
 
 class Test1984(unittest.TestCase):
@@ -28,9 +28,12 @@ class Test1984(unittest.TestCase):
         iterables: list[Iterable],
         **kwargs: Any,
     ) -> None:
-        msg: str = "go %r" % name
-        answer: list = list(core.iterprod(*iterables, **kwargs))
-        solution: list = list(itertools.product(*iterables, **kwargs))
+        msg: str
+        answer: list
+        solution: list
+        msg = "go %r" % name
+        answer = list(core.iterprod(*iterables, **kwargs))
+        solution = list(itertools.product(*iterables, **kwargs))
         self.maxDiff = None
         self.assertEqual(answer, solution, msg=msg)
 
