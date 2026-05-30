@@ -1,0 +1,7 @@
+--sort
+--sort
+--key=go
+--sort
+--key=go
+--all-keys
+src/iterprod/tests/testdata.toml
