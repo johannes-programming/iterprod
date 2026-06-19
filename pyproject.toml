@@ -1,7 +1,7 @@
 [build-system]
 build-backend = "setuptools.build_meta"
 requires = [
-    "setuptools>=64.0",
+    "setuptools>=77.0",
 ]
 
 [project]
@@ -10,24 +10,23 @@ authors = [
 ]
 classifiers = [
     "Development Status :: 5 - Production/Stable",
-    "License :: OSI Approved :: MIT License",
     "Natural Language :: English",
     "Operating System :: OS Independent",
     "Programming Language :: Python",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3 :: Only",
-    "Typing :: Typed",
 ]
 dependencies = []
 description = "This project provides a faster python-only alternative to itertools.product."
 keywords = []
+license = "MIT"
+license-files = [
+    "LICENSE.txt",
+]
 name = "iterprod"
 readme = "README.rst"
 requires-python = ">=3.11"
-version = "1.0.4"
-
-[project.license]
-file = "LICENSE.txt"
+version = "1.0.5"
 
 [project.urls]
 Download = "https://pypi.org/project/iterprod/#files"
