@@ -1,8 +1,3 @@
-[go.bar]
-iterables = [
-    "bar",
-]
-repeat = 3
 
 [go.empty]
 iterables = []
@@ -11,6 +6,12 @@ iterables = []
 iterables = [
     "foo",
 ]
+
+[go.bar]
+iterables = [
+    "bar",
+]
+repeat = 3
 
 [go.original]
 iterables = [
@@ -22,9 +23,5 @@ iterables = [
 [go.other]
 iterables = [
     "hello",
-    [
-        1,
-        2,
-        3,
-    ],
+    [1,2,3],
 ]

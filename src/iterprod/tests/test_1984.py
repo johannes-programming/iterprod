@@ -3,20 +3,17 @@ import functools
 import itertools
 import tomllib
 import unittest
-from collections.abc import Iterable
 from importlib import resources
-from typing import Any, Self
+from typing import *
 
 from iterprod import core
-
-__all__ = ["Test1984"]
 
 
 class Util(enum.Enum):
     util = None
 
     @functools.cached_property
-    def data(self: Self) -> dict[str, Any]:
+    def data(self: Self) -> dict:
         text: str
         text = resources.read_text("iterprod.tests", "testdata.toml")
         return tomllib.loads(text)
@@ -28,12 +25,12 @@ class Test1984(unittest.TestCase):
         name: str,
         /,
         *,
-        iterables: list[Iterable[Any]],
+        iterables: list[Iterable],
         **kwargs: Any,
     ) -> None:
         msg: str
-        answer: list[Any]
-        solution: list[Any]
+        answer: list
+        solution: list
         msg = "go %r" % name
         answer = list(core.iterprod(*iterables, **kwargs))
         solution = list(itertools.product(*iterables, **kwargs))
@@ -42,7 +39,7 @@ class Test1984(unittest.TestCase):
 
     def test_0(self: Self) -> None:
         n: str
-        q: dict[str, Any]
+        q: dict
         for n, q in Util.util.data["go"].items():
             self.go(n, **q)
 

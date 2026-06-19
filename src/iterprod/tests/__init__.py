@@ -3,7 +3,7 @@ import unittest
 __all__ = ["test"]
 
 
-def test() -> unittest.TextTestResult:
+def test() -> unittest.TextTestRunner:
     "This function runs all the tests."
     loader: unittest.TestLoader
     suite: unittest.TestSuite
