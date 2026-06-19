@@ -1,1 +1,2 @@
-include src/v440/tests/*.toml
+recursive-include docs *.rst
+recursive-include src/iterprod *.toml
