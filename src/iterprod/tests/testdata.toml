@@ -39,6 +39,15 @@ iterables = [
 parallel = true
 valid = true
 
+[go.test_all_empty]
+iterables = [
+    [],
+    [],
+]
+parallel = true
+solution = []
+valid = true
+
 [go.test_basic_product]
 iterables = [
     [
@@ -71,6 +80,24 @@ solution = [
 ]
 valid = true
 
+[go.test_bool_values]
+iterables = [
+    [
+        true,
+        false,
+    ],
+]
+parallel = true
+solution = [
+    [
+        true,
+    ],
+    [
+        false,
+    ],
+]
+valid = true
+
 [go.test_empty_iterable]
 iterables = [
     [],
@@ -81,6 +108,184 @@ iterables = [
 ]
 parallel = true
 solution = []
+valid = true
+
+[go.test_empty_with_repeat]
+iterables = [
+    [],
+]
+parallel = true
+repeat = 3
+solution = []
+valid = true
+
+[go.test_mixed_types]
+iterables = [
+    [
+        "a",
+        "b",
+    ],
+    [
+        1,
+        2,
+    ],
+    [
+        1.5,
+        2.5,
+    ],
+]
+parallel = true
+solution = [
+    [
+        "a",
+        1,
+        1.5,
+    ],
+    [
+        "a",
+        1,
+        2.5,
+    ],
+    [
+        "a",
+        2,
+        1.5,
+    ],
+    [
+        "a",
+        2,
+        2.5,
+    ],
+    [
+        "b",
+        1,
+        1.5,
+    ],
+    [
+        "b",
+        1,
+        2.5,
+    ],
+    [
+        "b",
+        2,
+        1.5,
+    ],
+    [
+        "b",
+        2,
+        2.5,
+    ],
+]
+valid = true
+
+[go.test_negative_repeat_three]
+iterables = [
+    [
+        0,
+        1,
+    ],
+]
+parallel = false
+repeat = -3
+solution = [
+    [
+        0,
+        0,
+        0,
+    ],
+    [
+        0,
+        0,
+        1,
+    ],
+    [
+        0,
+        1,
+        0,
+    ],
+    [
+        0,
+        1,
+        1,
+    ],
+    [
+        1,
+        0,
+        0,
+    ],
+    [
+        1,
+        0,
+        1,
+    ],
+    [
+        1,
+        1,
+        0,
+    ],
+    [
+        1,
+        1,
+        1,
+    ],
+]
+valid = true
+
+[go.test_nested_lists]
+iterables = [
+    [
+        [
+            1,
+        ],
+        [
+            2,
+        ],
+    ],
+    [
+        [
+            "a",
+        ],
+        [
+            "b",
+        ],
+    ],
+]
+parallel = true
+solution = [
+    [
+        [
+            1,
+        ],
+        [
+            "a",
+        ],
+    ],
+    [
+        [
+            1,
+        ],
+        [
+            "b",
+        ],
+    ],
+    [
+        [
+            2,
+        ],
+        [
+            "a",
+        ],
+    ],
+    [
+        [
+            2,
+        ],
+        [
+            "b",
+        ],
+    ],
+]
 valid = true
 
 [go.test_non_integer_repeat]
@@ -156,6 +361,59 @@ solution = [
 ]
 valid = true
 
+[go.test_repeat_three]
+iterables = [
+    [
+        0,
+        1,
+    ],
+]
+parallel = true
+repeat = 3
+solution = [
+    [
+        0,
+        0,
+        0,
+    ],
+    [
+        0,
+        0,
+        1,
+    ],
+    [
+        0,
+        1,
+        0,
+    ],
+    [
+        0,
+        1,
+        1,
+    ],
+    [
+        1,
+        0,
+        0,
+    ],
+    [
+        1,
+        0,
+        1,
+    ],
+    [
+        1,
+        1,
+        0,
+    ],
+    [
+        1,
+        1,
+        1,
+    ],
+]
+valid = true
+
 [go.test_repeat_zero]
 iterables = [
     [
@@ -188,6 +446,92 @@ solution = [
     ],
     [
         3,
+    ],
+]
+valid = true
+
+[go.test_string_chars]
+iterables = [
+    "ab",
+    "12",
+]
+parallel = true
+solution = [
+    [
+        "a",
+        "1",
+    ],
+    [
+        "a",
+        "2",
+    ],
+    [
+        "b",
+        "1",
+    ],
+    [
+        "b",
+        "2",
+    ],
+]
+valid = true
+
+[go.test_three_iterables]
+iterables = [
+    [
+        1,
+        2,
+    ],
+    [
+        "x",
+        "y",
+    ],
+    [
+        true,
+        false,
+    ],
+]
+parallel = true
+solution = [
+    [
+        1,
+        "x",
+        true,
+    ],
+    [
+        1,
+        "x",
+        false,
+    ],
+    [
+        1,
+        "y",
+        true,
+    ],
+    [
+        1,
+        "y",
+        false,
+    ],
+    [
+        2,
+        "x",
+        true,
+    ],
+    [
+        2,
+        "x",
+        false,
+    ],
+    [
+        2,
+        "y",
+        true,
+    ],
+    [
+        2,
+        "y",
+        false,
     ],
 ]
 valid = true
