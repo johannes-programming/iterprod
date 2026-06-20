@@ -15,6 +15,7 @@ classifiers = [
     "Programming Language :: Python",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3 :: Only",
+    "Typing :: Typed",
 ]
 dependencies = []
 description = "This project provides a faster python-only alternative to itertools.product."
@@ -26,10 +27,17 @@ license-files = [
 name = "iterprod"
 readme = "README.rst"
 requires-python = ">=3.11"
-version = "1.0.5"
+version = "1.1.10"
 
 [project.urls]
 Download = "https://pypi.org/project/iterprod/#files"
 Index = "https://pypi.org/project/iterprod/"
 Source = "https://github.com/johannes-programming/iterprod/"
 Website = "https://iterprod.johannes-programming.online/"
+
+[tool.mypy]
+files = [
+    ".",
+]
+python_version = "3.11"
+strict = true

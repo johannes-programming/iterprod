@@ -1,2 +1,3 @@
-from iterprod.core import *
-from iterprod.tests import *
+from iterprod.core import iterprod
+
+__all__ = ["iterprod"]
