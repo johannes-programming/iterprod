@@ -1,6 +1,6 @@
-import unittest
+__all__: list[str] = ["test"]
 
-__all__ = ["test"]
+import unittest
 
 
 def test() -> unittest.TextTestResult:

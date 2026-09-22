@@ -1,3 +1,3 @@
 from iterprod.core import iterprod
 
-__all__ = ["iterprod"]
+__all__: list[str] = ["iterprod"]

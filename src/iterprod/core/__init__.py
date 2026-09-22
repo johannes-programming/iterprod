@@ -1,8 +1,8 @@
-import operator
+__all__: list[str] = ["iterprod"]
+
+
 from collections.abc import Generator, Iterable, Sequence
 from typing import Any, SupportsIndex, TypeVar
-
-__all__ = ["iterprod"]
 
 Item = TypeVar("Item")
 

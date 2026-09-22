@@ -1,16 +1,17 @@
+__all__: list[str] = ["Test_0"]
+
+
 import enum
 import functools
 import itertools
 import math
 import tomllib
 import unittest
-from collections.abc import Iterable, Sequence
+from collections import abc
 from importlib import resources
 from typing import Any, Optional, Self, cast
 
 from iterprod import core
-
-__all__ = ["Test_0"]
 
 
 class Util(enum.Enum):
@@ -46,7 +47,7 @@ class Test_0(unittest.TestCase):
         self: Self,
         /,
         *,
-        iterables: list[Sequence[Any]],
+        iterables: list[abc.Sequence[Any]],
         repeat: Any = None,
         **kwargs: Any,
     ) -> None:
@@ -60,7 +61,7 @@ class Test_0(unittest.TestCase):
     def go_valid(
         self: Self,
         *,
-        iterables: list[Sequence[Any]],
+        iterables: list[abc.Sequence[Any]],
         parallel: bool,
         repeat: Any = None,
         solution: Optional[list[list[Any]]] = None,
