@@ -1,1 +1,4 @@
-include src/v440/tests/*.toml
+include run_tests.py
+recursive-include docs *.rst
+recursive-include src *.toml
+recursive-include tests *.toml
